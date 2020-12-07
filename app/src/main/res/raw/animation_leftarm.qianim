@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation xmlns:editor="http://www.ald.softbankrobotics.com/animation/editor" typeVersion="2.0" editor:fps="25">
+    <editor:clip editor:fps="25" editor:startFrame="0" editor:endFrame="93"/>
+    <ActuatorCurve fps="25" actuator="HeadYaw" mute="false" unit="degree">
+        <Key value="4.81146955" frame="0">
+            <Tangent side="right" abscissaParam="6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="4.81146955" frame="20">
+            <Tangent side="left" abscissaParam="-6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+            <Tangent side="right" abscissaParam="10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="4.81146955" frame="50">
+            <Tangent side="left" abscissaParam="-10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+    </ActuatorCurve>
+    <ActuatorCurve fps="25" actuator="HeadPitch" mute="false" unit="degree">
+        <Key value="-4.88712502" frame="0">
+            <Tangent side="right" abscissaParam="6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="-4.88712502" frame="20">
+            <Tangent side="left" abscissaParam="-6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+            <Tangent side="right" abscissaParam="10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="-4.88712502" frame="50">
+            <Tangent side="left" abscissaParam="-10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+    </ActuatorCurve>
+    <ActuatorCurve fps="25" actuator="LShoulderPitch" mute="false" unit="degree">
+        <Key value="91.8403854" frame="0">
+            <Tangent side="right" abscissaParam="6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="42.890625" frame="20">
+            <Tangent side="left" abscissaParam="-6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+            <Tangent side="right" abscissaParam="10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="42.890625" frame="50">
+            <Tangent side="left" abscissaParam="-10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+    </ActuatorCurve>
+    <ActuatorCurve fps="25" actuator="LShoulderRoll" mute="false" unit="degree">
+        <Key value="1.78100467" frame="0">
+            <Tangent side="right" abscissaParam="6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="25.2248631" frame="20">
+            <Tangent side="left" abscissaParam="-6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+            <Tangent side="right" abscissaParam="10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="25.2248631" frame="50">
+            <Tangent side="left" abscissaParam="-10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+    </ActuatorCurve>
+    <ActuatorCurve fps="25" actuator="LElbowYaw" mute="false" unit="degree">
+        <Key value="-81.4191513" frame="0">
+            <Tangent side="right" abscissaParam="6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="-107.490227" frame="20">
+            <Tangent side="left" abscissaParam="-6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+            <Tangent side="right" abscissaParam="10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="-107.490227" frame="50">
+            <Tangent side="left" abscissaParam="-10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+    </ActuatorCurve>
+    <ActuatorCurve fps="25" actuator="LElbowRoll" mute="false" unit="degree">
+        <Key value="-11.1840963" frame="0">
+            <Tangent side="right" abscissaParam="6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="-62.1388359" frame="20">
+            <Tangent side="left" abscissaParam="-6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+            <Tangent side="right" abscissaParam="10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="-62.1388359" frame="50">
+            <Tangent side="left" abscissaParam="-10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+    </ActuatorCurve>
+    <ActuatorCurve fps="25" actuator="LWristYaw" mute="false" unit="degree">
+        <Key value="-21.3709583" frame="0">
+            <Tangent side="right" abscissaParam="6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="-91.5850525" frame="20">
+            <Tangent side="left" abscissaParam="-6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+            <Tangent side="right" abscissaParam="10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="-91.5850525" frame="50">
+            <Tangent side="left" abscissaParam="-10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+    </ActuatorCurve>
+    <ActuatorCurve fps="25" actuator="LHand" mute="false" unit="dimensionless">
+        <Key value="0.506151009" frame="0">
+            <Tangent side="right" abscissaParam="6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="0.488576431" frame="20">
+            <Tangent side="left" abscissaParam="-6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+            <Tangent side="right" abscissaParam="10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="0.488576431" frame="50">
+            <Tangent side="left" abscissaParam="-10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+    </ActuatorCurve>
+    <ActuatorCurve fps="25" actuator="HipRoll" mute="false" unit="degree">
+        <Key value="-3.95767387e-07" frame="0">
+            <Tangent side="right" abscissaParam="6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="3.10102394e-07" frame="20">
+            <Tangent side="left" abscissaParam="-6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+            <Tangent side="right" abscissaParam="10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="-7.63749686e-09" frame="50">
+            <Tangent side="left" abscissaParam="-10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+    </ActuatorCurve>
+    <ActuatorCurve fps="25" actuator="HipPitch" mute="false" unit="degree">
+        <Key value="-6.94225836" frame="0">
+            <Tangent side="right" abscissaParam="6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="-6.94225836" frame="20">
+            <Tangent side="left" abscissaParam="-6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+            <Tangent side="right" abscissaParam="10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="-6.94225836" frame="50">
+            <Tangent side="left" abscissaParam="-10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+    </ActuatorCurve>
+    <ActuatorCurve fps="25" actuator="KneePitch" mute="false" unit="degree">
+        <Key value="0.282207757" frame="0">
+            <Tangent side="right" abscissaParam="6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="0.282207757" frame="20">
+            <Tangent side="left" abscissaParam="-6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+            <Tangent side="right" abscissaParam="10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="0.282207757" frame="50">
+            <Tangent side="left" abscissaParam="-10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+    </ActuatorCurve>
+    <ActuatorCurve fps="25" actuator="RShoulderPitch" mute="false" unit="degree">
+        <Key value="91.8401031" frame="0">
+            <Tangent side="right" abscissaParam="6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="91.8401031" frame="20">
+            <Tangent side="left" abscissaParam="-6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+            <Tangent side="right" abscissaParam="10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="91.8401031" frame="50">
+            <Tangent side="left" abscissaParam="-10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+    </ActuatorCurve>
+    <ActuatorCurve fps="25" actuator="RShoulderRoll" mute="false" unit="degree">
+        <Key value="-1.34402907" frame="0">
+            <Tangent side="right" abscissaParam="6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="-1.34402907" frame="20">
+            <Tangent side="left" abscissaParam="-6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+            <Tangent side="right" abscissaParam="10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="-1.34402907" frame="50">
+            <Tangent side="left" abscissaParam="-10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+    </ActuatorCurve>
+    <ActuatorCurve fps="25" actuator="RElbowYaw" mute="false" unit="degree">
+        <Key value="84.1280441" frame="0">
+            <Tangent side="right" abscissaParam="6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="84.1280441" frame="20">
+            <Tangent side="left" abscissaParam="-6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+            <Tangent side="right" abscissaParam="10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="84.1280441" frame="50">
+            <Tangent side="left" abscissaParam="-10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+    </ActuatorCurve>
+    <ActuatorCurve fps="25" actuator="RElbowRoll" mute="false" unit="degree">
+        <Key value="11.4470844" frame="0">
+            <Tangent side="right" abscissaParam="6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="11.4470844" frame="20">
+            <Tangent side="left" abscissaParam="-6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+            <Tangent side="right" abscissaParam="10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="11.4470844" frame="50">
+            <Tangent side="left" abscissaParam="-10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+    </ActuatorCurve>
+    <ActuatorCurve fps="25" actuator="RWristYaw" mute="false" unit="degree">
+        <Key value="20.6629581" frame="0">
+            <Tangent side="right" abscissaParam="6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="20.6629581" frame="20">
+            <Tangent side="left" abscissaParam="-6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+            <Tangent side="right" abscissaParam="10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="20.6629581" frame="50">
+            <Tangent side="left" abscissaParam="-10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+    </ActuatorCurve>
+    <ActuatorCurve fps="25" actuator="RHand" mute="false" unit="dimensionless">
+        <Key value="0.546573029" frame="0">
+            <Tangent side="right" abscissaParam="6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="0.546573029" frame="20">
+            <Tangent side="left" abscissaParam="-6.66666667" ordinateParam="0" editor:interpType="bezier_auto"/>
+            <Tangent side="right" abscissaParam="10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+        <Key value="0.546573029" frame="50">
+            <Tangent side="left" abscissaParam="-10" ordinateParam="0" editor:interpType="bezier_auto"/>
+        </Key>
+    </ActuatorCurve>
+</Animation>

@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:background="@drawable/travel_banner2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/hello_pepper"
+        android:layout_width="307dp"
+        android:layout_height="106dp"
+        android:text="Pepper, Votre Agent de Voyage!"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.259"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.142" />
+
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="217dp"
+        android:layout_height="165dp"
+        android:layout_marginBottom="336dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/white"
+        android:text="Appuyez ici pour commencer"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="@id/hello_pepper"
+        app:layout_constraintRight_toRightOf="@id/hello_pepper"
+        app:layout_constraintTop_toBottomOf="@id/hello_pepper"/>
+
+    <Button
+        android:id="@+id/result"
+        android:layout_width="235dp"
+        android:layout_height="150dp"
+        android:background="@android:color/holo_orange_dark"
+        android:text="Appuyez pour le résultat"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    <Button
+        android:id="@+id/okayTest"
+        android:layout_width="354dp"
+        android:layout_height="56dp"
+        android:background="@android:color/holo_red_light"
+        android:text="OKAY"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/result"
+        app:layout_constraintVertical_bias="0.67" />
+
+    <LinearLayout
+        android:layout_width="415dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/family"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/holo_purple"
+            android:layout_margin="10dp"
+            android:text="Famille ou en Couple"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/friends"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/holo_purple"
+            android:layout_margin="10dp"
+            android:text="Seul ou Avec des amis/amies"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="415dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/city"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@android:color/holo_red_light"
+            android:text="La Ville"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+        <Button
+            android:id="@+id/beach"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@android:color/holo_red_light"
+            android:text="La plage"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="415dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/plane"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@android:color/holo_green_light"
+            android:text="Avion"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/train"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@android:color/holo_green_light"
+            android:text="Train"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="415dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/berlin_button"
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:text="Berlin"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/rome_button"
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:text="Rome"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="415dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/corfou_button"
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:text="Corfou"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/corse_button"
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:text="Corse"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="415dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/londres_button"
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:text="Londres"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/amsterdam_button"
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:text="Amsterdam"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="415dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/barcelone_button"
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:text="Barcelone"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/nice_button"
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:text="Nice"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="415dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <Button
+            android:id="@+id/logement"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@android:color/holo_green_light"
+            android:text="Le logement"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/activity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@android:color/holo_green_light"
+            android:text="Des Activités locales"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="415dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/okayTest"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/start_button">
+
+        <Button
+            android:id="@+id/oneweek"
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/darker_gray"
+            android:text="Quelques Jours/Une Semaine"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/oneweek_plus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:background="@android:color/darker_gray"
+            android:text="Plus qu'une semaine"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/londre_recommend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" 'Je préfère Londres' "
+        tools:layout_editor_absoluteX="452dp"
+        tools:layout_editor_absoluteY="403dp"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/result"/>
+    <TextView
+        android:id="@+id/rome_recommend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" 'Je préfère Rome' "
+        tools:layout_editor_absoluteX="452dp"
+        tools:layout_editor_absoluteY="403dp"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/result"/>
+    <TextView
+        android:id="@+id/berlin_recommend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" 'Je préfère Berlin ' "
+        tools:layout_editor_absoluteX="452dp"
+        tools:layout_editor_absoluteY="403dp"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/result"/>
+    <TextView
+        android:id="@+id/amsterdam_recommend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" 'Je préfère Amsterdam' "
+        tools:layout_editor_absoluteX="452dp"
+        tools:layout_editor_absoluteY="403dp"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/result"/>
+    <TextView
+        android:id="@+id/corfou_recommend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" 'Je préfère Corfou' "
+        tools:layout_editor_absoluteX="452dp"
+        tools:layout_editor_absoluteY="403dp"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/result"/>
+    <TextView
+        android:id="@+id/corse_recommend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" 'Je préfère Corse' "
+        tools:layout_editor_absoluteX="452dp"
+        tools:layout_editor_absoluteY="403dp"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/result"/>
+    <TextView
+        android:id="@+id/barcelone_recommend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" 'Je préfère Barcelone' "
+        tools:layout_editor_absoluteX="452dp"
+        tools:layout_editor_absoluteY="403dp"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/result"/>
+    <TextView
+        android:id="@+id/nice_recommend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" 'Je préfère Nice' "
+        tools:layout_editor_absoluteX="452dp"
+        tools:layout_editor_absoluteY="403dp"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/result"/>
+
+    <TextView
+        android:id="@+id/compilingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" 'Traitment en cours ... ' "
+        tools:layout_editor_absoluteX="452dp"
+        tools:layout_editor_absoluteY="403dp"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/result"/>
+
+    <TextView
+        android:id="@+id/listenText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_light"
+        android:text="Je vous écoute "
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.735"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.081" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

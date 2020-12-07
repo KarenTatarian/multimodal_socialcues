@@ -1,0 +1,46 @@
+topic: ~script()
+# Defining extra concepts out of words or group of words
+#concept:(hello) [hello hi hey "good morning" greetings]
+
+# Replying to speech
+#u:(~hello) ~hello
+# Defining extra concepts out of words or group of words
+#concept:(hello) [hello hi hey "good morning" greetings]
+dynamic: combination_partone
+dynamic: combination_parttwo
+dynamic: recommendation
+dynamic: location
+dynamic: transportation
+dynamic: company
+
+# Replying to speech
+#u:(~hello) ~hello
+
+proposal: %start \rspd = 90\ Bonjour ^execute(myExecutor, wave) \pau = 2500\  je m’appelle Pepper, je serai votre agent de voyage aujourd’hui. %greeting_navigation
+
+proposal: %part_two \rspd = 90\ Okay  \pau = 300\ nous allons commencer! \pau = 500\ Comment %point_you allez vous??
+   u1:({mon nom est} _*) \rspd = 90\   très bien ! %point_self je suis ravi de faire votre connaissance! \pau = 2500\ Il y a de %point_object l'eau sur la table \pau = 300\ , servez vous si vous voulez \pau = 3500\. %turn_yielding \pau= 500\ êtes-vous impatient de commencer à planifier vos vacances ?
+       u2: ( {je vais} _* ) \rspd = 90\  Génial ! ^execute(myExecutor, goToOKAY)
+
+proposal: %part_twoNext \rspd = 90 \ %turn_taking \pau= 500\ Aujourd’hui, \pau = 500\, nous allons planifier ensemble vos vacances. %floor_holding \pau = 2500\ Pour mieux comprendre le type de vacances qui vous convient le plus, nous allons passer en revue des questions sur vos préférences. %point_self Vous pouvez répondre en utilisant ma tablette . okay? ^execute(myExecutor, okaytime)
+
+proposal:%part_twoOKAY  \rspd = 90\ %turn_taking \pau= 500\ D'abord, \pau = 700 \ avec combien de personnes vous allez voyager? %floor_holding \pau = 950\  Voulez-vous voyager en famille ou en couple %hand_one ou \pau = 800 \  tout seul ou avec des amis? \pau= 200\ Indiquez le moi sur ma tablette  ^execute(myExecutor,endPartTwo)
+
+proposal: %part_length  \rspd = 90\ okay \pau = 700\ Question suivante, combien de temps voudriez-vous que vos vacances durent? %hand_one Quelques jours à une semaine \pau = 800 \ ou plus qu'une semaine? \pau= 200\  ^execute(myExecutor,endPartLength)
+
+proposal: %part_three  \rspd = 90\ %turn_taking \pau= 700\ D'accord, \pau = 700 \  J'ai enregistré votre réponse \pau = 300 \  Alors, Préférez-vous voyager %hand_one par avion \pau = 900\ ou par train ?  ^execute(myExecutor,endPartThree)
+
+proposal: %part_fourTrain %turn_taking \pau= 700\ \rspd = 90\ Je vois \pau = 900\ Je trouve aussi que c'est génial de voyager en train parce que c’est plus confortable! %floor_holding \pau = 950\  alors pour la prochaine question, Préférez-vous aller %hand_one en vacances en ville \pau = 800\ ou à la plage ? ^execute(myExecutor,endPartFour)
+
+proposal: %part_fourPlane %turn_taking \pau= 700\ \rspd = 90\ Je vois \pau = 900\ Je trouve aussi que c'est génial de voyager en avion parce qu'il y a beaucoup d'endroits où aller! %floor_holding \pau = 950\ alors pour la prochaine question, Préférez-vous aller %hand_one en vacances en ville \pau = 800\ ou à la plage ? ^execute(myExecutor,endPartFour)
+
+proposal: %part_fourExtra \rspd = 90\ \pau= 500\ Bon choix, j'aime aussi ~location ! %floor_holding \pau = 950\ Quand vous planifiez des vacances, qu'est-ce qui est le plus important pour vous \pau = 300\ %hand_one l’emplacement et le logement \pau = 800\ ou les attractions et les activités locales?  ^execute(myExecutor,endPartFourExtra)
+
+proposal: %part_five %turn_taking \pau= 700\ \rspd = 90\ Alors \pau = 600 \ Je vais compiler vos informations \pau = 300\ Pour m’aider à générer des suggestions plus personnalisées, pourriez-vous m'en dire un peu plus sur %point_you vous? Par exemple, sur vos intérêts, \pau = 300\ %turn_yielding \pau = 500\ comment vous passez votre temps libre ? \pau= 100\ Je vous écoute %endPartFive
+   u1:(gfaskjhfhs) ^nextProposal
+
+proposal: %part_fiveExtra \rspd = 90\   \pau= 500\ ^execute(myExecutor, endPartFiveB)
+
+proposal: %part_six \rspd = 90\ \pau= 300\ Merci, c'est bon à savoir! \pau = 300\ Basé sur notre discussion \pau = 300\, pour voyager par ~transportation a ~location , \pau = 200\ %floor_holding \pau = 850\  Je peux recommander les options suivantes \pau = 400 \ %hand_one la ~combination_partone \pau = 800\ ou la ~combination_parttwo . \pau = 100\ Je pense que vous aimeriez ces destinations parce-qu'ils sont populaires pour les voyageurs ~company . \pau = 500\ %point_self Personnellement, j'aime bien la ~recommendation . %turn_yielding \pau = 500\ C'est quoi votre préférence ? \pau= 200\ Indiquez le moi sur ma tablette ^execute(myExecutor,endPartSix)
+
+proposal: %part_seven \rspd = 90\ \pau= 500\ Nous commençons à organiser des vacances très sympa!  \pau = 100\ j'ai encore du travail à faire et après  \pau = 200\ je vous envoi votre itinéraire. \pau = 800\ Merci beaucoup ! Bonne journée  ^execute(myExecutor, endPartSeven) \pau = 5000 \ Vous pouvez retourner dans l'autre pièce !

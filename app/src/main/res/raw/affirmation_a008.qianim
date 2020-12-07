@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation xmlns:editor="http://www.ald.softbankrobotics.com/animation/editor" typeVersion="2.0" editor:fps="25">
+    <editor:clip editor:fps="25" editor:startFrame="9" editor:endFrame="58"/>
+    <ActuatorCurve fps="25" actuator="HeadPitch" mute="false" unit="radian">
+        <Key value="-0.205418269" frame="9" editor:smooth="true" editor:symmetrical="true">
+            <Tangent side="right" abscissaParam="0.833333333" ordinateParam="0" editor:interpType="bezier"/>
+        </Key>
+        <Key value="-0.0977434957" frame="14" editor:smooth="true" editor:symmetrical="true">
+            <Tangent side="left" abscissaParam="-1.66666667" ordinateParam="0" editor:interpType="bezier"/>
+            <Tangent side="right" abscissaParam="1.33333333" ordinateParam="0" editor:interpType="bezier"/>
+        </Key>
+        <Key value="-0.160729993" frame="18" editor:smooth="true" editor:symmetrical="true">
+            <Tangent side="left" abscissaParam="-1.33333333" ordinateParam="0.0170108446" editor:interpType="bezier"/>
+            <Tangent side="right" abscissaParam="1" ordinateParam="-0.0127581335" editor:interpType="bezier"/>
+        </Key>
+        <Key value="-0.18705043" frame="21" editor:smooth="true" editor:symmetrical="true">
+            <Tangent side="left" abscissaParam="-1" ordinateParam="0" editor:interpType="bezier"/>
+            <Tangent side="right" abscissaParam="5" ordinateParam="0" editor:interpType="bezier"/>
+        </Key>
+        <Key value="-0.18705043" frame="36" editor:smooth="true" editor:symmetrical="true">
+            <Tangent side="left" abscissaParam="-5" ordinateParam="0" editor:interpType="bezier"/>
+            <Tangent side="right" abscissaParam="2.33333333" ordinateParam="0" editor:interpType="bezier"/>
+        </Key>
+        <Key value="-0.124382979" frame="43" editor:smooth="true" editor:symmetrical="true">
+            <Tangent side="left" abscissaParam="-2.33333333" ordinateParam="0" editor:interpType="bezier"/>
+            <Tangent side="right" abscissaParam="1.66666667" ordinateParam="0" editor:interpType="bezier"/>
+        </Key>
+        <Key value="-0.243998767" frame="48" editor:smooth="true" editor:symmetrical="true">
+            <Tangent side="left" abscissaParam="-1.66666996" ordinateParam="0" editor:interpType="bezier"/>
+            <Tangent side="right" abscissaParam="1.66666996" ordinateParam="0" editor:interpType="bezier"/>
+        </Key>
+        <Key value="-0.133444202" frame="53" editor:smooth="true" editor:symmetrical="true">
+            <Tangent side="left" abscissaParam="-1.66666667" ordinateParam="0" editor:interpType="bezier"/>
+            <Tangent side="right" abscissaParam="1.66666667" ordinateParam="0" editor:interpType="bezier"/>
+        </Key>
+        <Key value="-0.243998767" frame="58" editor:smooth="true" editor:symmetrical="true">
+            <Tangent side="left" abscissaParam="-1.66666667" ordinateParam="0" editor:interpType="bezier"/>
+        </Key>
+    </ActuatorCurve>
+    <ActuatorCurve fps="25" actuator="HeadYaw" mute="false" unit="radian">
+        <Key value="0.0028364915" frame="18" editor:smooth="true" editor:symmetrical="true"/>
+    </ActuatorCurve>
+    <ActuatorCurve fps="25" actuator="HipPitch" mute="false" unit="radian"/>
+    <ActuatorCurve fps="25" actuator="HipRoll" mute="false" unit="radian"/>
+    <ActuatorCurve fps="25" actuator="KneePitch" mute="false" unit="radian"/>
+    <ActuatorCurve fps="25" actuator="LElbowRoll" mute="false" unit="radian"/>
+    <ActuatorCurve fps="25" actuator="LElbowYaw" mute="false" unit="radian"/>
+    <ActuatorCurve fps="25" actuator="LHand" mute="false" unit="dimensionless"/>
+    <ActuatorCurve fps="25" actuator="LShoulderPitch" mute="false" unit="radian"/>
+    <ActuatorCurve fps="25" actuator="LShoulderRoll" mute="false" unit="radian"/>
+    <ActuatorCurve fps="25" actuator="LWristYaw" mute="false" unit="radian"/>
+    <ActuatorCurve fps="25" actuator="RElbowRoll" mute="false" unit="radian"/>
+    <ActuatorCurve fps="25" actuator="RElbowYaw" mute="false" unit="radian"/>
+    <ActuatorCurve fps="25" actuator="RHand" mute="false" unit="dimensionless"/>
+    <ActuatorCurve fps="25" actuator="RShoulderPitch" mute="false" unit="radian"/>
+    <ActuatorCurve fps="25" actuator="RShoulderRoll" mute="false" unit="radian"/>
+    <ActuatorCurve fps="25" actuator="RWristYaw" mute="false" unit="radian"/>
+</Animation>
