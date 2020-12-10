@@ -1,5 +1,8 @@
 package com.example.oneversion_multimodal;
 
+/* ============================================================
+Author: Karen Tatarian
+================================================================== */
 
 import androidx.annotation.RawRes;
 import androidx.appcompat.app.AppCompatActivity;
@@ -74,7 +77,8 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
 
     private QiChatbot qiChatbot;
     private Chat chat;
-    private EditablePhraseSet combination_one; //store dynamic concept combination
+
+    private EditablePhraseSet combination_one;
     private EditablePhraseSet combination_two;
     private EditablePhraseSet recommendation;
     private EditablePhraseSet location;
@@ -85,6 +89,7 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
     private String destination_type;
     private String type_traveller;
 
+    // Bookmarks
     private Bookmark startBookmark;
     private Bookmark part_twoBookmark;
     private Bookmark part_twoNextBookmark;
@@ -100,19 +105,18 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
     private Bookmark part_sevenBookmark;
     private Bookmark greetingNavigationBookmark;
 
-    //Information for turn_taking -- beginning of speech
+    //Bookmark Status
     private BookmarkStatus greetingNavigationBookmarkStatus;
     private BookmarkStatus righthandUP_BookmarkStatus;
     private BookmarkStatus pointmyself_BookmarkStatus;
     private BookmarkStatus pointYou_BookmarkStatus;
     private BookmarkStatus pointObject_BookmarkStatus;
-    private BookmarkStatus listenTimeBookmarkStatus;
-    private BookmarkStatus doneListenBookmarkStatus;
-
     private BookmarkStatus  turn_yielding_BookmarkStatus;
     private BookmarkStatus  turn_taking_BookmarkStatus;
     private BookmarkStatus floor_holding_BookmarkStatus;
+    private BookmarkStatus endPartFiveBookmarkStatus;
 
+    // Buttons
     private Button start_button;
     private Button family_button;
     private Button friends_button;
@@ -121,22 +125,11 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
     private Button plane_button;
     private Button train_button;
     private Button result_button;
-    private Button yes_button;
-    private Button no_button;
     private Button okay_button;
     private Button oneweek_button;
     private Button oneweekplus_button;
     private Button logement_button;
     private Button activity_button;
-
-    private TextView berlin_recommend;
-    private TextView rome_recommend;
-    private TextView corfou_recommend;
-    private TextView corse_recommend;
-    private TextView londres_recommend;
-    private TextView amsterdam_recommend;
-    private TextView barcelone_recommend;
-    private TextView nice_recommend;
     private Button berlin_button;
     private Button rome_button;
     private Button corfou_button;
@@ -146,33 +139,19 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
     private Button barcelone_button;
     private Button nice_button;
 
+    // Textview
+    private TextView berlin_recommend;
+    private TextView rome_recommend;
+    private TextView corfou_recommend;
+    private TextView corse_recommend;
+    private TextView londres_recommend;
+    private TextView amsterdam_recommend;
+    private TextView barcelone_recommend;
+    private TextView nice_recommend;
     private TextView listentab;
     private TextView compilingTab;
 
     private HumanAwareness humanAwareness;
-
-    private BookmarkStatus endPartFiveBookmarkStatus;
-
-   /* private ConversationStatus.OnHearingChangedListener listener = hearing -> {
-        if (hearing) {
-            Log.i(TAG, "I am hearing ");
-            nodding_whileListening(qiContext);
-        } else {
-            nodding_whileListening(qiContext).cancel(true);
-            try {
-                Thread.sleep(5000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            Log.i(TAG, "I am not hearing ");
-            runOnUiThread(() -> {
-                result_button.setVisibility(Button.VISIBLE);
-            });
-            qiChatbot.async().goToBookmark(part_fiveExtraBookmark, AutonomousReactionImportance.HIGH, AutonomousReactionValidity.IMMEDIATE);
-        }
-    };
-
-    private ConversationStatus conversationStatus; */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -196,11 +175,9 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
 
         start_button = (Button) findViewById(R.id.start_button) ;
         start_button.setVisibility(Button.GONE);
-        //start_button.setBackgroundColor(Color.WHITE);
         start_button.setOnClickListener(v -> {
             long startTime = System.currentTimeMillis();
             Log.i(TAG, "Start button clicked " + Long.toString(startTime));
-           // gettingHold(qiContext);
             qiChatbot.async().goToBookmark(part_twoBookmark, AutonomousReactionImportance.HIGH, AutonomousReactionValidity.IMMEDIATE);
             start_button.setVisibility(Button.GONE);
         });
@@ -476,6 +453,7 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
     @Override
     public void onRobotFocusGained(QiContext qiContext) {
         Log.i(TAG, "onRobotFocusGained === Everything");
+        //Localization of robot
         Localization.async().requestPlace(qiContext).andThenConsume(place -> {
             // The Place is nullable, don't forget to null-check it.
             if (place != null) {
@@ -501,7 +479,7 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
                 .withTopic(topic)
                 .build();
 
-
+        //Setting Bookmarks
         Map<String, Bookmark> bookmarks = topic.getBookmarks();
         startBookmark = bookmarks.get("start");
         part_twoBookmark = bookmarks.get("part_two");
@@ -523,13 +501,9 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
         Bookmark pointYou = bookmarks.get("point_you");
         Bookmark point_self = bookmarks.get("point_self");
         Bookmark pointObject = bookmarks.get("point_object");
-       // Bookmark listenTime = bookmarks.get("listenTime");
-      //  Bookmark doneListen = bookmarks.get("donelisten");
-
         Bookmark turn_yielding = bookmarks.get("turn_yielding");
         Bookmark turn_taking = bookmarks.get("turn_taking");
         Bookmark floor_holding = bookmarks.get("floor_holding");
-
         Bookmark listening = bookmarks.get("endPartFive");
 
         Map<String, QiChatExecutor> executors = new HashMap<>();
@@ -546,14 +520,12 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
                 .withChatbot(qiChatbot)
                 .build();
 
+        // Connecting with the qiChatbot
         greetingNavigationBookmarkStatus = qiChatbot.bookmarkStatus(greetingNavigationBookmark);
         righthandUP_BookmarkStatus = qiChatbot.bookmarkStatus(right_hand);
         pointYou_BookmarkStatus = qiChatbot.bookmarkStatus(pointYou);
         pointmyself_BookmarkStatus = qiChatbot.bookmarkStatus(point_self);
         pointObject_BookmarkStatus = qiChatbot.bookmarkStatus(pointObject);
-       // listenTimeBookmarkStatus = qiChatbot.bookmarkStatus(listenTime);
-       // doneListenBookmarkStatus = qiChatbot.bookmarkStatus(doneListen);
-
         endPartFiveBookmarkStatus = qiChatbot.bookmarkStatus(listening);
         turn_taking_BookmarkStatus = qiChatbot.bookmarkStatus(turn_taking);
         turn_yielding_BookmarkStatus = qiChatbot.bookmarkStatus(turn_yielding);
@@ -561,21 +533,15 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
 
         chat.addOnStartedListener(this::sayProposal);
 
-        //wave_gesture_BookmarkStartus.addOnReachedListener(() -> wave_animation(qiContext));
         greetingNavigationBookmarkStatus.addOnReachedListener(() -> getGreetingNavigation(qiContext) );
         righthandUP_BookmarkStatus.addOnReachedListener(() -> righthand_animation(qiContext));
         pointmyself_BookmarkStatus.addOnReachedListener(() -> pointMyself_animation(qiContext));
         pointObject_BookmarkStatus.addOnReachedListener(() -> point_animation(qiContext));
         pointYou_BookmarkStatus.addOnReachedListener(() -> pointyou_rightArm(qiContext));
-
         turn_yielding_BookmarkStatus.addOnReachedListener(() -> getTurnYielding(qiContext));
         turn_taking_BookmarkStatus.addOnReachedListener(() -> getTurnTaking(qiContext));
         floor_holding_BookmarkStatus.addOnReachedListener(() -> getFloorHolding(qiContext));
-
         endPartFiveBookmarkStatus.addOnReachedListener(() -> fullListen(qiContext));
-       // listenTimeBookmarkStatus.addOnReachedListener(() -> displayListen());
-       // doneListenBookmarkStatus.addOnReachedListener(()-> offListen());
-
 
         combination_one = qiChatbot.dynamicConcept("combination_partone");
         combination_two = qiChatbot.dynamicConcept("combination_parttwo");
@@ -604,6 +570,7 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
         qiChatbot.goToBookmark(startBookmark, AutonomousReactionImportance.HIGH, AutonomousReactionValidity.IMMEDIATE);
     }
 
+    // Gathering of information and characteristics about human
     private Future<Void> continuouslyRunInfo(QiContext qiContext){
         Future<Void> waitFuture = FutureUtils.wait(4000L, TimeUnit.MILLISECONDS);
 
@@ -652,7 +619,7 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
 
     private Future<Void> getTurnTaking(QiContext qiContext){
         List<Human> humans = qiContext.getHumanAwareness().getHumansAround();
-        Human human = humans.get(0); //for now taking the first human
+        Human human = humans.get(0); //for now taking the first human ,, assuming one-on-one interaction
         Actuation actuation = qiContext.getActuation();
         Frame robotFrame = actuation.robotFrame();
         Frame gazeFrame = actuation.gazeFrame();
@@ -683,6 +650,7 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
         return gazeMechanism.gaze_mechanisms(human,robotFrame,gazeFrame,qiContext).floor_holding;
     }
 
+    // Calling the Animations
     private void wave_animation(QiContext qiContext) {
         Log.i(TAG, "waving");
         build_animation(R.raw.hello_a010, qiContext);
@@ -692,7 +660,7 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
             e.printStackTrace();
         }
     }
-
+    // other-pointing animation/gesture
     private void pointyou_rightArm(QiContext qiContext){
         Log.i(TAG, "point you with right arm animation ");
         build_animation(R.raw.animation_you, qiContext);
@@ -702,12 +670,12 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
             e.printStackTrace();
         }
     }
-
+    // two choice animation/gesture
     private void righthand_animation(QiContext qiContext){
         Log.i(TAG, "Both arms up for this or this gesture");
         build_animation(R.raw.animation_00,qiContext);
     }
-
+    // point animation/gesture with joint attention gaze
     private void point_animation(QiContext qiContext){
         Log.i(TAG, "Point animation: right arm up");
         build_animation(R.raw.animation_point,qiContext);
@@ -717,12 +685,11 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
             e.printStackTrace();
         }
     }
-
+    //self-pointing gesture
     private void pointMyself_animation (QiContext qiContext){
         Log.i(TAG, "Pointing at myself animation ");
         build_animation(R.raw.animation_myself,qiContext);
     }
-
 
     private void build_animation(@RawRes Integer mimicResource, QiContext qiContext) {
         // Create an animation from the mimic resource.
@@ -748,30 +715,6 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
         Log.i(TAG, "removing from dynamics");
         dynamic.async().removePhrases(Collections.singletonList(new Phrase(addition)));
     }
-
-   /* private boolean isRobotHearing(QiContext qiContext) {
-        ConversationStatus conversationStatus = qiContext.getConversation().status(qiContext.getRobotContext());
-        return conversationStatus.getHearing();
-    }
-
-    private Future<Void> nodding_whileListening (QiContext qiContext){
-        Log.i(TAG, "Nodding ");
-        Long durantionBetweenNods = 2000L;
-        AtomicBoolean promiseFulfilled = new AtomicBoolean(false);
-
-        Future<Void> waitFuture = FutureUtils.wait(durantionBetweenNods, TimeUnit.MILLISECONDS);
-        Animation animation = AnimationBuilder.with(qiContext)
-                .withResources(R.raw.affirmation_a008)
-                .build();
-        Animate animate = AnimateBuilder.with(qiContext)
-                .withAnimation(animation)
-                .build();
-        Future<Void> nodding = animate.async().run();
-        Future<Void> composed = nodding.andThenCompose(future -> {
-            return waitFuture;
-        });
-        return composed;
-    } */
 
     // EDITING THE UI & executes
     class MyQiChatExecutor extends BaseQiChatExecutor {
@@ -884,6 +827,8 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
         }
     }
 
+    /* Listening State Behavior */
+
     private Future<Void> nodding_whileListening (QiContext qiContext){
         Log.i(TAG, "Nodding ");
         AtomicBoolean promiseFulfilled = new AtomicBoolean(false);
@@ -948,80 +893,9 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
             unsubscribeFromIsRobotHearing(qiContext, listener);
         });
     }
-    /*private void maybeGoToPartFive(boolean tooSoon, boolean notHeardForLong) {
-        if (!tooSoon && notHeardForLong) {
-            Log.i(TAG, "&&&&&&&&&&&&&&&&&&& GOING TO BOOKMARK&&&&&&&&&&&&&&&");
-            qiChatbot.async().goToBookmark(part_fiveExtraBookmark, AutonomousReactionImportance.HIGH, AutonomousReactionValidity.IMMEDIATE);
-        }
-    }
-    private void behaviorListening(QiContext qiContext) {
-        runOnUiThread(() -> {
-            listentab.setVisibility(TextView.VISIBLE);
-        });
-
-        final AtomicBoolean tooSoon = new AtomicBoolean();
-        tooSoon.set(true);
-        final AtomicBoolean notHeardForLong = new AtomicBoolean();
-        tooSoon.set(false);
-
-        Timer tooSoonTimer = new Timer();
-        tooSoonTimer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                tooSoon.set(false);
-                maybeGoToPartFive(tooSoon.get(), notHeardForLong.get());
-            }
-            }, 8000);
-
-        final Timer notHeardForLongTimer = new Timer();
-
-        ConversationStatus.OnHearingChangedListener listener = hearing -> {
-            if (hearing) {
-              // ... enable nodding
-              Log.i(TAG, "hearing //////");
-              nodding_whileListening(qiContext);
-              notHeardForLongTimer.cancel();
-            } else {
-                // ... disable nodding
-                Log.i(TAG, "NOT hearing //////");
-                nodding_whileListening(qiContext).cancel(true);
-                notHeardForLongTimer.schedule(new TimerTask() {
-                    @Override
-                    public void run() {
-                        notHeardForLong.set(true);
-                        maybeGoToPartFive(tooSoon.get(), notHeardForLong.get());
-                    }
-                    }, 3000L);
-            }
-        };
-
-        // At the beginning
-        if (isRobotHearing(qiContext)) {
-          // runOnUiThread(() -> {
-          //   listentab.setVisibility(TextView.VISIBLE);
-          //});
-          nodding_whileListening(qiContext);
-        }
-      subscribeToIsRobotHearing(qiContext, listener);
-
-
-      // When don't want to know
-      unsubscribeFromIsRobotHearing(qiContext, listener);
-    }*/
-      //subscribeToIsRobotHearing(qiContext, listener);
-
-      // When don't want to know
-      //unsubscribeFromIsRobotHearing(qiContext, listener);
-      //listener(isRobotHearing(qiContext));
 
     private Future<Void> totalListening (QiContext qiContext){
         Log.i(TAG, "TOTAL LISTENING");
-       /* waitFuture.thenConsume(future ->{
-            behaviorListening(qiContext);
-        }).andThenConsume(nod ->{
-            Log.i(TAG, "going to bookmark");
-            qiChatbot.async().goToBookmark(part_fiveExtraBookmark, AutonomousReactionImportance.HIGH, AutonomousReactionValidity.IMMEDIATE);
-        }); */
 
         AtomicBoolean promiseFulfilled = new AtomicBoolean(false);
 

@@ -60,14 +60,6 @@ public class GreetingNavigation {
                 .buildAsync()
                 .andThenCompose(socialnavig_greeting -> socialnavig_greeting.async().run());
 
-        /*Future<Void> goToFuture = GoToBuilder.with(qiContext)
-                .withFrame(goToFrame)
-                .withMaxSpeed(max_speed)
-                .buildAsync()
-                .andThenCompose(goTo -> continuouslyRun(goTo, delay_time, qiContext));*/
-
-        //FutureUtils.wait(5L, TimeUnit.SECONDS).andThenConsume(ignore -> goToFuture.requestCancellation());
-
         return goToFuture;
     }
 

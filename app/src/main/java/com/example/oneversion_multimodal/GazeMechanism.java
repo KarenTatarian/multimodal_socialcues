@@ -25,17 +25,6 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/*
-###############################################################################
-#    1. Define of Parameters                                                  #
-#     0 -> unknown                                                            #
-#     1 -> bystander                                                          #
-#     2 -> active                                                             #
-#     3 -> overhearer                                                         #
-# !!! This code assumes that are two people or less + 1 robot in conversation #
-###############################################################################  */
-
-
 public class GazeMechanism {
     private static final String TAG = "multi_socialcues";
     private double angleturnyielding_degree = 12.318;
