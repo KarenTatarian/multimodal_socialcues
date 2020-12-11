@@ -21,6 +21,7 @@ A robotified project for Pepper with QiSDK. Read the [documentation](https://dev
 The project comes complete with a sample project. You can clone the repository, open it in Android Studio, and run this directly onto a robot.
 
 ## Project Content 
+The project focuses on the following modalities: 
 ### GazeMechanism
 The GazeMechanism's are designed are lookAt actions with respect to the current Human's HeadFrame and Robot's robotFrame.
 
