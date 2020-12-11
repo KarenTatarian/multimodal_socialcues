@@ -22,11 +22,11 @@ The project comes complete with a sample project. You can clone the repository, 
 
 ## Project Content 
 The project focuses on the following modalities: 
-### GazeMechanism
+#### GazeMechanism
 The GazeMechanism's are designed are lookAt actions with respect to the current Human's HeadFrame and Robot's robotFrame.
 
-GazeMechanisms: TurnTaking (called at beginning of Robot's speaking turn as %tun_taking Bookmark in scipt), FloorHolding (called at in the middle of long speaking turns and called in the script using %floor_holding Bookmark), and TurnYielding (called at the end of a speaking turn as %turn_yielding Bookmark in script)
+GazeMechanisms: TurnTaking (called at beginning of Robot's speaking turn as %tun_taking ```Bookmark``` in scipt of ```Chat```), FloorHolding (called at in the middle of long speaking turns and called in the script using ```%floor_holding``` ```Bookmark```), and TurnYielding (called at the end of a speaking turn as ```%turn_yielding``` ```Bookmark``` in script)
 
-### GreetingNavigation 
+#### GreetingNavigation 
 Computes distance between robot and human and approaches human at speed 0.25 m/s until a distance of 0.85 meters is acheived 
 
