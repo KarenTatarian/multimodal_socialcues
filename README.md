@@ -4,13 +4,13 @@ Author: Karen Tatarian
 Multi-modal Social Cues for Socially Intelligent Human-Robot Interaction 
 
 This project is part of the following submitted paper:  "How does modality matter? Investigating the synthesis and effects of multi-modal robot behavior on social intelligence". 
-This work presents a multi-modal interaction focusing on the following modalities: proxemics for social navigation, gaze mechanisms (for turn-taking floor-holding, turn-yielding and joint attention), kinesics (for symbolic, deictic, and beat gestures), and social verbal content.
+This work presents a multi-modal interaction focusing on the following modalities: proxemics for social navigation ```GreetingNavigation``` , gaze mechanisms ```GazeMechanism```(for turn-taking floor-holding, turn-yielding and joint attention), kinesics (for symbolic, deictic, and beat gestures), and social verbal content.
 
 This application was implemented on Pepper robot (by SoftBank Robotics) running on Android and used for the study on the investigation and analysis of multi-modal social cues. 
 
 This version is compatible with Pepper running Naoqi OS 2.9.5.172 and more.
 
-In this application, Pepper acts a travel agent planning a holiday with the user (script in French). ```DestinationSelection``` is a class that takes the decisions made on the tablet by the user and accordingly outputs the destination suggestion.  
+In this application, Pepper acts a travel agent planning a holiday with the user (script in French). ```DestinationSelection``` is a class that takes the decisions made on the tablet by the user and accordingly returns the destination suggestion.  ```InformationHumans``` is a class that returns distances, angles, and attention state of the human around the robot. 
 
 # Getting Started
 
