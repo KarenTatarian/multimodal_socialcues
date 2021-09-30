@@ -10,7 +10,7 @@ This application was implemented on Pepper robot (by SoftBank Robotics) running 
 
 This version is compatible with Pepper running Naoqi OS 2.9.5.172 and more.
 
-In this application, Pepper acts a travel agent planning a holiday with the user (script in French). 
+In this application, Pepper acts a travel agent planning a holiday with the user (script in French). ```DestinationSelection``` is a class that takes the decisions made on the tablet by the user and accordingly outputs the destination suggestion.  
 
 # Getting Started
 
