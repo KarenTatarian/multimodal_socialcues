@@ -1,12 +1,14 @@
 # multimodal_socialcues
-# Author: Karen Tatarian
-# Multi-modal Social Cues for Socially Intelligent Human-Robot Interaction in a Travel Planning Application (as a possible B2B solution)
+Author: Karen Tatarian
 
-Publication Link: https://link.springer.com/article/10.1007/s12369-021-00839-w 
-Researchgate Link: https://www.researchgate.net/publication/356473237_How_does_Modality_Matter_Investigating_the_Synthesis_and_Effects_of_Multi-modal_Robot_Behavior_on_Social_Intelligence 
-
+Multi-modal Social Cues for Socially Intelligent Human-Robot Interaction in a Travel Planning Application (as a possible B2B solution)
 
 This project is part of the following Journal Paper:  "How does modality matter? Investigating the synthesis and effects of multi-modal robot behavior on social intelligence" published at the International Journal of Social Robotics  (IJSR)
+
+Publication Link: https://link.springer.com/article/10.1007/s12369-021-00839-w 
+
+Researchgate Link: https://www.researchgate.net/publication/356473237_How_does_Modality_Matter_Investigating_the_Synthesis_and_Effects_of_Multi-modal_Robot_Behavior_on_Social_Intelligence 
+
 
 This work presents a multi-modal interaction focusing on the following modalities: proxemics for social navigation ```GreetingNavigation``` , gaze mechanisms ```GazeMechanism```(for turn-taking floor-holding, turn-yielding and joint attention), kinesics (for symbolic, deictic, and beat gestures), and social verbal content.
 
